@@ -1,0 +1,27 @@
+@if(expression){
+<p>Angular 17 If Conditions</p>
+<button class="btn btn-danger" (click)="onClick()">Click Me</button>
+} @else {
+<p>Angular 17 Else</p>
+<button class="btn btn-danger" (click)="onClick()">Click Me</button>
+}
+<hr />
+@if(day == 'sunday'){
+<p>Holiday</p>
+} @else if (day == 'monday') {
+<p>Its Working Day</p>
+} @else {
+<p>Vacations</p>
+}
+<hr />
+@for (item of empDetails;track item.id; let i = $index ) {
+{{ i + 1 }} {{ item.nam }} <br />
+} @empty{ No Data }
+<hr />
+@switch (day) { @case(day == "sunday") {
+<p>Holiday</p>
+} @case (day == "Monday") {
+<p>Working Day</p>
+} @default {
+<p>Diwali Holiday</p>
+} }

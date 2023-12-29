@@ -1,0 +1,23 @@
+<div class="row">
+  @for( user of userData; track user.id; let i = $index){
+  <div class="col-md-4">
+    @defer (on viewport) {
+    <div class="card">
+      <div class="card-body">
+        <img class="w-100" src="{{ user.img }}" alt="" />
+        <h4 class="card-title mt-2">{{ i + 1 }} {{ user.title }}</h4>
+        <p class="card-text">{{ user.text }}</p>
+        <a href="#" class="card-link">{{ user.link }}</a>
+        <a href="#" class="card-link">{{ user.otherlink }}</a>
+      </div>
+    </div>
+    }@placeholder{
+    <div class="loader"></div>
+    } @loading (minimum 2s){
+    <div class="loader">Loading</div>
+    } @error {
+    <div>ErrorData</div>
+    }
+  </div>
+  }
+</div>
